@@ -26,5 +26,22 @@ namespace TestMvcApp.Controllers
 
             return list;
         }
+
+        public List<StudentModel> Get(string id)
+        {
+            var list = new List<StudentModel>();
+            list.Add(new StudentModel
+            {
+                RollNumber = "BSEF14M041",
+                StudentName = "Muzna Aleem"
+            });
+            list.Add(new StudentModel
+            {
+                RollNumber = "BSEF09M008",
+                StudentName = "Faisal Ghaffar"
+            });
+
+            return list.Where(x=>x.RollNumber==id).ToList();
+        }
     }
 }
